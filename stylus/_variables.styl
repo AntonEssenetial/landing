@@ -1,0 +1,1082 @@
+// Reset styles
+@import 'components/_reset'
+// Stylus mixins
+@import 'components/_mixins-stylus'
+// Sprite generator
+@import 'components/_sprite'
+// Retina Sprite generator
+@import 'components/_retinaSprite'
+// Sprite mixins 
+@import 'components/_mixins'
+
+$IMG-PATH = '../images/background/'
+// Now you can use the function image-url
+// .element
+//   background-image image-url('logo.png')
+
+
+// Bdoy font 
+$body-font = ptsans
+
+
+// Container-wrapper-width 
+$container-wrapper-width = 1170px
+$container-wrapper-padding = 0 20px
+
+
+// Link - var
+$link-size = 17px
+$link-color = $blue
+$link-hover-color = $button-hover
+$link-text-docoration = underline
+$link-text-docoration-hover = none
+
+
+// Text - var
+$text-size = 15px
+$text-color = $dark
+$text-padding = 20px
+$text-line-height = 23px
+
+
+// Span - var
+$span-size = 14px
+$span-color = $dark
+
+
+// Heading - sive 
+$h1 = 48px
+$h2 = 48px
+$h3 = 36px
+$h4 = 24px
+$h5 = 20px
+$h6 = 14px
+$h-weight = 100
+$h-color = $dark
+
+
+// Col
+$col-margin = 30px
+
+
+// Label - input
+$input-size = 17px
+$input-color = $dark
+$input-background = white
+$input-border-radius = 3px
+$input-height = 43px
+$input-margin = 10px 0 0 0 
+$label-margin = 0 0 20px 0
+$label-color = $dark 
+$label-size = 14px
+$input-padding = 10px
+$input-border-color = $border
+$place-holder-default = grey2
+input-border()
+  border 1px solid $input-border-color
+  &:focus 
+    border-color $yellow
+    color $dark
+
+
+// Banner color link 
+$banner-link-color = $dark
+
+
+// Buttons
+$button-radius = 5px
+$button-height = 43px
+$button-padding = 0 15px
+$button-size = 17px
+$button-color = white
+$button-border = $blue
+$button-background = $blue
+$button-hover-color = white
+$button-border-hover-color = $button-hover
+$button-background-hover-color = $button-hover
+// Button xl
+$button-xl-width = auto
+$button-xl-height = 200px
+$button-xl-font-size = 18px
+$button-xl-font-weight = normal 
+// Button xs
+$button-xs-width = auto
+$button-xs-height = 23px
+$button-xs-font-size = 14px
+$button-xs-font-weight = bold 
+
+
+// Box sizing
+*
+  box-sizing border-box
+
+
+// Wrapper
+.container-wrapper 
+  width $container-wrapper-width
+  margin 0 auto
+  padding $container-wrapper-padding
+  position: relative
+  
+  
+// Fonts
+roboto = 'Roboto', sans-serif;
+ptsans = 'Pt sans', sans-serif;
+$placeholderFont = $body-font
+
+
+// Colors
+dark          =  #262626
+yellow        =  #f5aa00
+blue          =  #2763b0
+grey          =  #d7d7d7
+soft          =  #f7fafc
+orange        =  #f17300
+green         =  #408c09
+purple        =  purple 
+pink          =  pink
+red           =  #be000d
+brown         =  #151110
+milk          =  #e5e1d0
+gold          =  #d09700
+border        =  #d5d5d5
+border-grey   =  #484848
+button-hover  =  #194174
+dash-border   =  #ececec
+// //
+grey2         =  #878787
+grey3         =  #f8f8f8
+
+
+// Colors
+$dark = dark
+$blue = blue
+$white = white 
+$red = red
+$green = green 
+$black = black 
+$grey = grey 
+$grey2 = grey2
+$grey3 = grey3
+$orange = orange 
+$yellow = yellow
+$borwn = brown
+$hover = gold
+$border = border
+$button-hover = button-hover
+$gold = gold
+
+
+// Input colors - readonly - disabled - succes - error
+$BGreadonly      =  #e6e6e6
+$BGdisabled      =  #e6e6e6
+$BGDcolor        =  #9f9f9f
+$border-disabled =  border-dash
+$readonly        =  $grey2
+$disabled        =  milk
+$success         =  #2fa149
+$error           =  #dd3e3e
+$information     =  #2057a0
+$worning         =  #9c7614
+
+
+// Color class
+.white
+  color white
+.blue 
+  color $blue
+.red 
+  color $red
+.green 
+  color $green
+.yellow 
+  color $yellow
+
+
+// Js class
+.jsVisible     
+  display block
+.jsContFlex.jsFlex
+  display flex !important
+.jsContFlex 
+  display none !important
+.jsTabDash
+.jsTab
+  cursor pointer
+.jsCont
+.jsContDash 
+  display none
+.jsCont.active 
+.jsContDash.active 
+  display block
+.jsNone
+  display none
+.jsToggle.active
+  .jsFade
+    display block
+  
+
+// Bx controls
+.jsNext
+.jsPrev
+.s-next
+.s-prev
+  a 
+    width 100%
+    height 100% 
+
+
+// Custom functions
+decor()
+  text-decoration underline
+  &:hover 
+    text-decoration none
+trs()
+  transition ease-in-out .2s
+trs-slow()
+  transition ease-in-out .4s
+hover()
+  &:hover
+    color green
+    text-decoration: underline
+static()
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -o-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+vam($top = 0px, $margin = 0, $position = relative, $display = inline-block, $vertical-align = middle)
+  if $display
+    display $display
+  if $vertical-align
+    vertical-align $vertical-align
+  if $position
+    position $position
+  if $top 
+    top $top
+  if $margin 
+    margin $margin
+img()
+  display block
+img-width()
+  max-width 100%
+  width 100%
+  height auto
+
+  
+// Disabled input
+input[type=text]:read-only
+  box-shadow none !important
+  background-color : $BGreadonly
+  color      : $readonly
+  border 1px solid border-dash
+  &:focus
+    border-color $readonly !important
+    color $readonly
+input[type=button]:disabled,
+button:disabled
+  background : transparent !important
+  border     : 1px solid $BGdisabled !important
+  color      : $BGdisabled
+  cursor     : default !important
+input[type=text]:disabled,
+input[type=submit]:disabled,
+.select_disabled,
+.button_disabled
+  background : $BGdisabled !important
+  border     : 1px solid $border-disabled !important
+  color      : $BGDcolor
+  cursor     : default !important
+.button_disabled:hover
+  background : $BGdisabled !important
+  border     : 1px solid $BGdisabled !important
+  color      : $disabled !important
+  curosor    : default !important
+.input_error
+  border     : 1px solid $error !important
+  // box-shadow : inset 0px 0px 0px 1px $error !important
+  color      : $error !important
+.input_success 
+  border     : 1px solid $success !important
+  // box-shadow : inset 0px 0px 0px 1px $success !important
+  color      : $success !important
+input[type=submit]:disabled
+  color      : white
+  
+
+// Input reset 
+input[type=text]
+textarea
+select
+  -webkit-appearance: none;
+  border-radius $input-border-radius
+input
+textarea
+  border-radius $input-border-radius
+  margin 0px 
+  border none
+  font-family $placeholderFont
+  background: $input-background
+  padding $input-padding
+  color $input-color
+  font-size $input-size
+  input-border()
+select
+  border-radius $input-border-radius
+  background: $input-background
+  margin 0px 
+  border none
+  appearance none
+  border-radius (0px)
+  font-family $placeholderFont
+  color $input-color
+  padding $input-padding
+  font-size $input-size
+  input-border()
+  
+
+// Default input
+.form__link 
+  font-size 12px
+  display: block 
+  line-height 20px 
+  margin 0px !important
+.form__tooltip
+  display: block
+  color grey
+  font-size 12px
+  line-height 20px
+  margin 8px 0 0 0
+.form__label
+  color $label-color
+  font-size $label-size
+  margin $label-margin
+.form__label
+.form__area 
+  display block
+  width 100%
+.form__input
+  display block
+  width 100%
+  height $input-height
+  margin $input-margin
+  input-border()
+.form__area
+  margin $input-margin
+.dash__label
+  color white
+  font-size $label-size
+  margin $label-margin
+  font-weight 200
+  display block
+.dash__input
+  display block
+  width 100%
+  height $input-height
+  margin $input-margin
+  border 1px solid border-grey
+  background #232323
+  color grey
+  font-weight 200
+  &:focus
+    border-color white
+    color white
+  
+    
+// Label checkbox
+input[type="checkbox"]
+input[type="radio"]
+  display none
+  
+
+// Custom checkbox
+.label__checkbox
+.label__radio
+  margin 20px 0 0px 0 
+  color dark
+  font-size 14px 
+  font-weight 200
+  display flex
+  line-height 20px
+  cursor pointer
+// Radio
+.label__radio i 
+  width 19px
+  height @width
+  background: white
+  border-radius (50%)
+  display inline-block
+  position relative
+  cursor pointer
+  border 1px solid white
+  +after('')
+    trs()
+    width 5px 
+    height @width
+    background: black
+    display: block
+    margin 6px
+    border-radius (50%)
+    display: none
+// Checkbox
+.label__checkbox i 
+  width 19px 
+  height @width
+  display inline-block
+  position relative
+  border-radius (2px)
+  background: white
+  cursor pointer
+  border 1px solid white
+  +after('')
+    width 8px 
+    height 5px 
+    border-radius (0%)
+    display block
+    border-bottom: 3px solid #f5aa00;
+    border-left: 3px solid #f5aa00;
+    transform: rotateZ(-45deg);
+    trs()
+    margin-left 0px
+    left 3px 
+    top 3px
+    position: relative
+    display none
+// Custom checkbox
+.label__checkbox .input__checkbox:checked + i
+  border-color blue
+  +after()
+    display: block
+    trs()
+ // Custom radio   
+.label__radio .input__radio:checked + i
+  background: yellow
+  border-color black
+  +after()
+    display: block
+    trs()
+    
+    
+
+// Pay radio button
+.payment__radio:checked + i 
+  +before()
+    background transparent
+    trs()
+.pay-1
+  +after('')
+    // retinaSprite($sprite_picon_group)
+    //sprite($sprite-picon-1)
+    display block
+.pay-2
+  +after('')
+    // retinaSprite($sprite_picon_2_group)
+    //sprite($sprite-picon-2)
+    display block
+.pay-3
+  +after('')
+    // retinaSprite($sprite_picon_3_group)
+    //sprite($sprite-picon-3)
+    display block
+.pay-4
+  +after('')
+    // retinaSprite($sprite_picon_4_group)
+    //sprite($sprite-picon-4)
+    display block
+.pay-5
+  +after('')
+    // retinaSprite($sprite_picon_5_group)
+    //sprite($sprite-picon-4)
+    display block
+.payment__label
+  margin 0 15px 0 0
+  i 
+    cursor pointer
+    display block
+    position relative
+    +before('')
+      trs()
+      width 100%
+      height 100%
+      background: rgba(35, 35, 35, 0.68);
+      position absolute 
+      top 0px 
+      left 0px
+  
+
+// Placeholder color
+::-webkit-input-placeholder {color:$place-holder-default;}
+::-moz-placeholder          {color:$place-holder-default;}/* Firefox 19+ */
+:-moz-placeholder           {color:$place-holder-default;}/* Firefox 18- */
+:-ms-input-placeholder      {color:$place-holder-default;}
+  
+
+// Buttons
+button 
+  border none 
+  vertical-align middle
+  cursor pointer 
+  border none
+  outline none
+  background transparent
+.button
+  white-space: nowrap;
+  background $button-background
+  border-radius $button-radius
+  height $button-height
+  line-height ($button-height - 3px)
+  padding $button-padding
+  display inline-block
+  font-size $button-size
+  text-align: center
+  cursor pointer
+  color $button-color
+  border 1px solid $button-border
+  -webkit-appearance: none;
+  text-decoration none
+  trs()
+  &:hover 
+    background $button-background-hover-color
+    color $button-hover-color
+    trs()
+    border-color $button-border-hover-color
+.button_xl
+  width $button-xl-width
+  height $button-xl-height
+  font-size $button-xl-font-size
+  font-weight $button-xl-font-weight
+.button_xs
+  width $button-xs-width
+  height $button-xs-height
+  line-height ($button-xs-height - 3px)
+  font-size $button-xs-font-size
+  font-weight $button-xs-font-weight
+.button_white
+  // border-color white
+  background-color white
+.button_red 
+  // border-color $red 
+  background: $red
+  // color $red
+.button_green 
+  // border-color $green
+  background: $green
+  // color $green
+.button_blue 
+  border-color $blue
+  background: $blue
+  color white
+.button_yellow 
+  // border-color $yellow 
+  background: $yellow 
+  // color $yellow
+.button_orange 
+  // border-color $orange
+  background: $orange
+  // color $orange
+.button_grey
+  border-color $grey 
+  background: $grey 
+  color $dark
+.button_transparent
+  border 1px solid $grey
+  background: transparent
+  &:hover 
+    border-color $yellow
+    background: transparent
+
+// col 
+for i in (1..100)
+  .col__{i}
+    width (i)%
+    position: relative
+.col_margin
+  margin-right $col-margin
+
+
+// Alignment
+.ta-center
+  text-align: center
+.ta-left
+  text-align: left
+.ta-right
+  text-align: right
+
+
+// H heading 
+h1 
+  font-size $h1
+  color $h-color
+h2 
+  font-size $h2
+  color $h-color
+h3 
+  font-size $h3
+  color $h-color
+h4 
+  font-size $h4
+  color $h-color
+h5 
+  font-size $h5
+  color $h-color
+h6 
+  font-size $h6
+  color $h-color
+  
+
+// Elements
+menu 
+  padding 0px
+  margin 0px
+span 
+  display inline-block
+  vertical-align middle
+  font-size $span-size
+  color $span-color
+a 
+  text-decoration $link-text-docoration
+  display inline-block
+  font-size $link-size
+  color $link-color
+  &:hover 
+    color $link-hover-color
+    text-decoration $link-text-docoration-hover
+h1, h2, h3, h4, h5, h6 
+  font-weight $h-weight
+.text 
+  font-size 16px
+  line-height 23px   
+p
+  font-size $text-size 
+  color $text-color  
+  padding-bottom $text-padding
+  line-height $text-line-height
+
+    
+// Banner-link
+.banner__link 
+  color $banner-link-color
+  font-size 14px
+  display: block
+    
+
+// Charts 
+a[href="http://www.amcharts.com/javascript-charts/"]
+  display none !important
+  
+
+// Table reset 
+th 
+  font-weight normal
+  
+
+// Popup 
+.dash-popup.jsVisible
+  display flex
+  .popup__container
+    display flex
+.popup.jsVisible 
+  display block
+  .popup__container
+    display block
+.popup
+.dash-popup
+  display none
+  position fixed 
+  background: rgba(0,0,0, 0.4)
+  top 0px
+  left 0px 
+  width 100% 
+  height @width
+  flex-direction column
+  flex-wrap wrap
+  z-index 104
+
+
+// Notifications 
+.notification
+  position fixed
+  width 100%
+  top 0px 
+  left 0px
+  z-index 4
+.notifi
+  position relative
+  margin 0 auto 10px auto
+  width 679px
+  display none
+  padding 30px
+  .close 
+    top 0px
+    right -48px
+    position absolute
+    // sprite($sprite-close)
+    cursor pointer 
+    &:hover 
+      // sprite($sprite-close-hover)
+  span 
+    color white
+    font-size 24px 
+    font-weight 100
+    text-transform uppercase
+  p 
+    font-size 14px
+    color white
+    padding 0px
+.notifi-wrapper
+  width 1200px 
+  margin 0 auto
+  padding 10px 0
+  text-align: center
+.notifi__msg
+  font-size 14px
+  display block
+.notifi_error 
+  background: $error
+  span 
+    // sprite($sprite-error)
+    vam( , 0px 20px 0 0)
+.notifi_success 
+  background: $success
+  span 
+    // sprite($sprite-success)
+    vam( , 0px 20px 0 0)
+.notifi_warning
+  background: $worning
+  span 
+    // sprite($sprite-warning)
+    vam( , 0px 20px 0 0)
+.notifi_information
+  background: $information
+  span 
+    // sprite($sprite-information)
+    vam( , 0px 20px 0 0)
+    
+
+// Sandwitch and responsive menu
+.header__responsive-menu.active
+.menu.active
+  display block
+.toggle-menu
+  background: none
+  border none
+  outline none
+  display none
+  height 40px
+  position relative 
+  padding 0px
+  margin 0px
+.sandwitch
+  width 31px
+  height 31px
+  left 0
+  right 0
+  margin auto
+  z-index 200
+  > span
+    width 31px
+    height 4px
+    background white
+    border none
+    border-radius 0px
+    display block
+    position relative
+.sw-topper
+  top 5px
+  transition: transform 0.5s, top 0.2s
+  display block 
+.sw-bottom 
+  top: 10px
+  transition: transform 0.5s, top 0.2s
+  transition-delay: 0.2s, 0s 
+.sw-footer 
+  top: 15px
+  transition: all 0.5s
+  transition-delay: 0.1s 
+.toggle-menu.active .sw-topper 
+.button__sub.active .sw-topper 
+  background color6
+  top: 13px
+  transform: rotate(-45deg) 
+.toggle-menu.active .sw-bottom 
+.button__sub.active .sw-bottom 
+  background color6
+  top: 10px
+  transform: rotate(45deg) 
+.toggle-menu.active .sw-footer 
+.button__sub.active .sw-footer 
+  background color6
+  opacity: 0
+  top: 0
+  transform: rotate(180deg)
+ 
+
+// Bread
+.bread-crumbs
+  
+
+  &__item
+    font-size 15px
+    display: inline-block
+    a 
+      color dark
+      font-size 15px
+    &:last-child
+      color grey2
+  &__separator 
+    display: inline-block
+    margin 0 5px
+    color grey2
+    
+
+// Custom scrollbar
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar
+.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar
+  background: red
+.mCSB_scrollTools .mCSB_draggerRail
+  background-color: border;
+.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar
+.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar
+  background-color: #fff; 
+  background-color: hover;
+  
+
+// Acordion 
+// .acordion
+  
+
+//   &__item
+//     position relative
+//   &__link 
+//     font-size 18px
+//     color black 
+//     bold()
+//     span 
+//       +before('')
+//         sprite()
+//         vam()
+//   &__sub-item 
+//     margin 20px 0 0 0
+    
+
+// Bx slider 
+// .bx-controls
+// .s-prev 
+//   a
+//     sprite($sprite-bx-prev-2)
+//   &:hover a
+//     sprite($sprite-bx-prev-2-hover)
+// .s-next 
+//   a
+//     sprite($sprite-bx-next-2)
+//   &:hover a
+//     sprite($sprite-bx-next-2-hover)
+    
+
+// Bx custom pager
+// .custom__pager
+  
+
+//   .bx-prev 
+//     sprite($sprite-bx-prev)
+//   .bx-next
+//     sprite($sprite-bx-next)
+
+    
+
+// Default controls style 
+.bx-controls
+  width: 100%;
+  margin: 0 auto;
+  position: absolute;
+  top: 59%;
+.bx-controls-direction 
+  width 1170px
+  margin 0 auto 
+  position: relative
+  a 
+    opacity: 0.6
+    trs()
+    &:hover 
+      opacity: 1
+      trs()
+.bx-wrapper .bx-prev
+  left: 10px;
+  /*background: url(../../images/controls.png) no-repeat 0 -32px;*/
+.bx-wrapper .bx-next
+  right: 10px;
+  /*background: url(../../images/controls.png) no-repeat -43px -32px;*/
+
+
+// Bx slider background slide selector    
+// .responsiveSlide
+//   background: url(../images/slider/1.jpg) center 
+//   width 100%
+//   height 738px
+
+
+// Ticker
+.ticker
+  width: 100%;
+  font-size: 0px;
+.example-enough-space.has-enough-space 
+  text-align: center;
+  
+
+// FAQ container
+.section__content
+  p 
+    font-size 15px 
+    span 
+      color red
+      font-size 12px 
+      position relative
+      top -5px
+  p  a 
+    color gold
+    font-size 15px
+  p  a 
+    margin-right 3px
+  ol li
+    position: relative;
+    font-size: 15px;
+    line-height: 25px;
+    padding-left: 18px !important;
+    > ul
+      padding-left: 50px;
+    > ol 
+      margin-top 25px
+      padding-left 15px
+    > li 
+      padding-left 10px
+  ul
+    padding-left 20px
+    margin-bottom: 20px;
+    list-style-type: disc;
+    li 
+      line-height: 25px;
+      font-size: 15px;
+      padding-left: 18px !important;
+      ul
+        padding-left 17px
+        margin 0px
+        list-style circle
+  ol 
+    padding-left 18px
+    padding-bottom 15px
+    p  
+      margin 0 0 15px 0 
+      padding 0 0 10px 0
+      span 
+        color red
+        font-size 9px
+        position relative 
+        top -5px
+        font-weight 400
+  .num__items_roman
+    list-style-type: lower-roman !important;
+    margin-bottom 20px
+  h1
+    font-size 32px 
+  h2
+    font-size 24px
+  h3
+    font-size 20px
+  h4
+    font-size 18px
+  h5
+    font-size 16px
+  h6
+    font-size 14px
+  h1, h2, h3, h4, h5, h6
+    font-weight 400
+    color dark
+    margin 0 0 16px 0
+    padding 0px
+  .t-title 
+    font-size: 24px;
+    font-weight: 200;
+    margin-bottom: 20px;
+    color dark
+    
+
+// Pagination
+.pagination
+  &-wrapper 
+    padding 20px 0 0 0
+  ul
+    align-items: center;
+    display flex
+  li
+    margin-right 10px
+    width 45px 
+    height 45px
+    line-height @height
+    text-align: center
+  a
+    width 45px 
+    height @width
+    border 1px solid black2
+    line-height @height
+    text-align: center
+    color black2
+    border-radius(50%)
+    &:hover 
+      border-color red
+  .active 
+    a 
+      background: red
+      border-color red 
+      color white
+  .previous_page.disabled
+    opacity 0.5
+    background: grey2
+    border-color black !important
+    a 
+      cursor default
+  .next_page.disabled
+    opacity 0.5
+    background: grey2
+    border-color black !important
+    a 
+      cursor default
+  .previous_page
+  .next_page
+    height 45px 
+    width auto
+    line-height @height
+    border 1px solid black2
+    padding 0 20px
+    text-align: center
+    align-items: center;
+    justify-content: center;
+    opacity 1
+    border-radius(30px)
+    &:hover 
+      border-color red
+    a
+      border none
+  .previous_page
+    display flex
+    margin-left auto
+    &:hover a 
+      background: none
+      border none
+    &:before 
+      content ''
+      // sprite($sprite-prev-arrow)
+      display block
+      margin 0 10px 0 0 
+  .next_page
+    margin-right 0px !important
+    display flex
+    &:hover a 
+      background: none
+      border none
+    &:after 
+      content ''
+      // sprite($sprite-next-arrow)
+      display block
+      margin 0 0px 0 10px

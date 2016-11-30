@@ -1,0 +1,16 @@
+include head.pug
+include footer.pug
+include mixins.pug
+include variables.pug
+
+doctype
+html
+  head
+    +head()
+  body
+    .wrapper
+      block content
+      +footer()
+    include scripts.pug
+    //- include popup.pug
+    //- include notification.pug

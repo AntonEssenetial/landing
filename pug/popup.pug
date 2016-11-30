@@ -1,0 +1,17 @@
+//-jade popup.jade
+.popup
+  .container-wrapper
+    .popup__container.popup__container_bg1.animated.fadeInUp.jsPopup-7
+      .popup__close
+      .popup__title Подтвердите номер телефона
+      .popup__text На указанный номер телефона <span class='popup__number'>+79161234567</span> отправлено СМС с кодомавторизации вашего номера.
+      .popup__form
+        form(action="")
+          .row.between.center
+            .col__50.form__label_margin
+              label().form__label Введите код из СМС
+                input(type="text").form__input
+            .col__50
+              .popup__tooltip Не получили СМС?
+                a(href="").popup__link_sm Отправить код еще раз
+          input(type="submit", value='Подтвердить').button.button_big.button_margin
