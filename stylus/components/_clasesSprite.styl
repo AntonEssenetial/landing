@@ -1,0 +1,70 @@
+// sprite
+// Logo
+.header__logo
+  width: 88px;
+  height: 57px;
+  background: url(../images/gif-logo/logo.gif) no-repeat;
+  background-size contain
+  &:hover 
+    opacity 0.8
+    trs()
+    
+// Lang
+.ru
+  +before('')
+    sprite($sprite-ru) 
+    vam(-1px, 0px 7px 0 0px)
+.eng
+  +before('')
+    sprite($sprite-eng)
+    vam(-1px, 0px 7px 0 0px)
+.en
+  +before('')
+    sprite($sprite-eng)
+    vam(-1px, 0px 7px 0 0px)
+.de
+  +before('')
+    sprite($sprite-de) 
+    vam(-1px, 0px 7px 0 0px)
+.es
+  +before('')
+    sprite($sprite-es)
+    vam(-1px, 0px 7px 0 0px)
+.it
+  +before('')
+    sprite($sprite-it) 
+    vam(-1px, 0px 7px 0 0px)
+.cn
+  +before('')
+    sprite($sprite-cn) 
+    vam(-1px, 0px 7px 0 0px)
+.jp
+  +before('')
+    sprite($sprite-jp)
+    vam(-1px, 0px 7px 0 0px)
+.nl
+  +before('')
+    sprite($sprite-nl) 
+    vam(-1px, 0px 7px 0 0px)
+.pl
+  +before('')
+    sprite($sprite-pl)
+    vam(-1px, 0px 7px 0 0px)
+.fr 
+  +before('')
+    sprite($sprite-fr)
+    vam(-1px, 0px 7px 0 0px)
+    
+
+// Play
+.section__vid__app__play
+  +after('')
+    sprite($sprite-vid)
+    vam()
+    
+
+// Socials
+.footer__bottom__fb
+  sprite($sprite-fb)
+  &:hover 
+    sprite($sprite-fb-hover)

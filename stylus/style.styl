@@ -3,7 +3,365 @@
 @import '_variables'
 @import '_components'
 @import '_media'
-
-
+@font-face
+    font-family: "LatoRegular";
+    src: url("../fonts/LatoRegular/LatoRegular.eot");
+    src: url("../fonts/LatoRegular/LatoRegular.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/LatoRegular/LatoRegular.woff") format("woff"),
+    url("../fonts/LatoRegular/LatoRegular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+@font-face
+    font-family: "LatoLight";
+    src: url("../fonts/LatoLight/LatoLight.eot");
+    src: url("../fonts/LatoLight/LatoLight.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/LatoLight/LatoLight.woff") format("woff"),
+    url("../fonts/LatoLight/LatoLight.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+    
 body 
-  font-family $body-font
+  font-family 'LatoRegular'
+  max-width 100%
+  min-width 1350px
+  
+
+.header
+  position: fixed
+  width: 100%
+  top 30px 
+  left 0px
+  z-index: 100
+  
+
+  &__container
+    background white
+    padding 13px 20px 
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.29);
+    
+
+  &__logo 
+    
+
+    &__text-1
+      font-size 29px 
+      font-weight bold
+      display: block
+      font-style italic
+      position: relative
+      top -1px
+    &__text-2
+      font-size: 23px;
+      font-weight: 100;
+      font-style: italic;
+      display: block;
+      position: relative;
+      top: -5px;
+      line-height: 25px;
+      left: -2px;
+  
+
+  &__lang 
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border 1px solid border
+    &:hover 
+      border-color blue
+    
+    &__button
+      padding 12px 8px 0 8px
+      cursor: pointer
+      +before()
+        margin 0px
+        
+    &-wrapper 
+      position: relative
+      top -2px
+      
+    &__selector 
+      top: 4px;
+      left: -1px;
+      width auto
+      background: white
+      position: absolute
+      z-index 1
+      display none
+      box-shadow 0 4px 5px rgba(39, 80, 132, 0.42);
+      
+    &__link 
+      font-size 14px
+      display: block
+      padding 10px
+      white-space nowrap
+      color dark
+      text-decoration none
+      
+      &:hover 
+        background: soft-blue
+        color dark
+        
+      &:hover 
+        background: soft-blue
+        
+    &__item
+      
+      &_active a
+        background: soft-blue
+        
+
+  &__user
+    
+    &__img
+      display: block
+
+    &__data
+        
+      &-str
+        line-height: 24px;
+        margin-right: 5px;
+        color: #646464;
+        font-size 14px
+        
+      &__name 
+        font-size 15px
+        position: relative
+        top -2px
+        
+
+.section
+  
+
+  &__top
+    overflow: hidden
+    background-size cover !important
+  
+    &__h1 
+      color white 
+      margin-top 200px
+      margin-bottom 50px
+      font-family LatoLight
+      span 
+        color yellow
+        font-size 72px
+        vertical-align: baseline
+        
+    &__intro 
+      max-width 1300px
+      margin 0 auto
+      align-items: baseline;
+      width 100%
+      
+      &-wrapper
+        position: absolute
+        bottom -153px
+        width 100%
+       
+    &__layer 
+      display block
+      position: absolute
+      top auto !important
+      img 
+        display: block
+      &:first-child
+        position: relative;
+        z-index: 5;
+        width: 100%;
+        max-width: 369px;
+        margin: 0 auto;
+      &:last-child
+        left: 15px !important;
+        bottom: 50px
+        z-index: 1
+      &:nth-child(6)
+        box-shadow: 0px -2px 7px rgba(0, 0, 0, 0.25);
+        right: 15px !important;
+        left: auto !important;
+        bottom 50px 
+        z-index: 2
+      &:nth-child(5)
+        box-shadow: 0px -2px 7px rgba(0, 0, 0, 0.25);
+        left: 21.8% !important;
+        bottom 83px 
+        z-index 3
+      &:nth-child(4)
+        box-shadow: 0px -2px 7px rgba(0, 0, 0, 0.25);
+        right: 21.8% !important;
+        left: auto !important;
+        bottom 83px 
+        z-index 3
+      &:nth-child(3)
+        box-shadow: 0px -2px 7px rgba(0, 0, 0, 0.25);
+        left: 10.8% !important;
+        bottom: 10px 
+        z-index 2
+      &:nth-child(2)
+        box-shadow: 0px -2px 7px rgba(0, 0, 0, 0.25);
+        right: 10.8% !important;
+        left: auto !important;
+        bottom 10px 
+        z-index 3
+        
+      
+        
+
+  &__referal 
+    padding 100px 0
+    box-shadow: 0 -5px 5px rgba(72, 75, 117, 0.67);
+    position: relative
+    z-index: 2
+    background: image-url('2.jpg') center no-repeat #f2f2f2
+    
+    p 
+      text-align justify
+      
+
+  &__vid 
+    padding 170px 0
+    background-size cover !important
+    
+
+    &__app 
+      
+      &__play 
+        cursor pointer
+        border 3px solid transparent
+        border-radius 50%
+        margin 30px 0 0 0
+        trs()
+        &:hover 
+          border-color blue
+          trs()
+      
+      &__span 
+        color white
+        display: block
+        margin 30px 0
+
+
+  &__about 
+    padding 50px 
+    background: #f2f2f2
+    text-align: center
+    
+    
+    &__img 
+      
+      img 
+        display: block
+        margin 0 auto
+        
+    &__span 
+      font-size 16px 
+      margin 30px 0
+    
+    &__text 
+      padding 0 20px
+      
+
+  &__managment
+    padding 50px 0 40px 0
+    text-align: center
+    
+    &__item 
+      width 20%
+      margin 0 0 20px 0
+      
+    &__img
+      margin 25px 0
+      
+    &__name 
+      font-size 16px 
+      
+    &__post 
+      font-size 16px
+      font-family LatoLight
+      
+
+  &__tarif
+    padding 40px 0
+    background-size cover !important 
+    text-align: center
+    
+    h2
+    p 
+      color white 
+      
+    &__str-1
+      color white
+      font-size 20px
+      display block
+      font-family LatoLight
+    
+    &__str-2 
+      font-size 80px 
+      color white 
+      font-family LatoLight
+      display block
+      
+    &__item 
+      text-align left
+      &:nth-child(2)
+      &:nth-child(3)
+      &:nth-child(4)
+        padding-left 30px
+    
+    &-wrapper 
+      margin 30px 0 0 0
+      
+
+  &__table
+    background: #f2f2f2
+    padding 20px 0 50px 0
+    
+
+    &-content 
+      width 100%
+      
+      tr td 
+        width 25%
+        font-family LatoLight
+        vertical-align: middle
+        border-bottom 1px solid #e2e2e2
+        border-right 1px solid #e2e2e2
+        padding 20px 20px 20px 30px
+        &:last-child 
+          border-right none
+        &:first-child 
+          padding 20px 0
+    
+    &__button-wrapper
+      margin-left 25%
+      padding-left 30px
+      border-left 1px solid #e2e2e2
+      padding-top 15px
+      padding-bottom 15px
+      
+    &__span 
+      margin-left 40px
+      
+
+.footer
+  padding 50px 0 0 0
+  
+
+  &__top 
+    text-align: center
+    
+    .button 
+      +after()
+        sprite($sprite-right-hover)
+      &:hover 
+        opacity: 0.8
+        
+  &__bottom
+    padding 23px 0
+    border-top 1px solid #e2e2e2
+    margin 50px 0 0 0
+    
+    &__copy 
+      font-size 16px
+      padding 0px
+      
+
+      

@@ -1,0 +1,49 @@
+// Lang selector
+.jsLangSelector.active 
+  .header__lang__selector
+    display: block
+
+
+// Section
+h2 
+  font-family LatoLight
+  margin-bottom 30px
+  
+
+// Button
+.button 
+  +after('')
+    sprite($sprite-right)
+    vam(0, 0px 0px 0 10px)
+  &:hover 
+    +after()
+      sprite($sprite-right-hover)
+      
+
+// Slider
+.slick-dots li button:before
+  opacity: .65;
+  width auto
+.slick-dots li button
+.slick-dots li
+  padding 0px
+  width auto
+  margin 0 3px
+.slick-dots li.slick-active button:before
+  color blue
+.slick-prev
+  +before('')
+    sprite($sprite-prev)
+    vam()
+  &:hover 
+    +before()
+      sprite($sprite-prev-hover)
+.slick-next
+  +before('')
+    sprite($sprite-next)
+    vam()
+  &:hover 
+    +before()
+      sprite($sprite-next-hover)
+.slick-prev, .slick-next
+  top 81%

@@ -20,12 +20,12 @@ $body-font = ptsans
 
 
 // Container-wrapper-width 
-$container-wrapper-width = 1170px
+$container-wrapper-width = 1140px
 $container-wrapper-padding = 0 20px
 
 
 // Link - var
-$link-size = 17px
+$link-size = 14px
 $link-color = $blue
 $link-hover-color = $button-hover
 $link-text-docoration = underline
@@ -33,10 +33,10 @@ $link-text-docoration-hover = none
 
 
 // Text - var
-$text-size = 15px
+$text-size = 14px
 $text-color = $dark
-$text-padding = 20px
-$text-line-height = 23px
+$text-padding = 25px
+$text-line-height = 21px
 
 
 // Span - var
@@ -45,8 +45,8 @@ $span-color = $dark
 
 
 // Heading - sive 
-$h1 = 48px
-$h2 = 48px
+$h1 = 42px
+$h2 = 32px
 $h3 = 36px
 $h4 = 24px
 $h5 = 20px
@@ -84,16 +84,16 @@ $banner-link-color = $dark
 
 
 // Buttons
-$button-radius = 5px
-$button-height = 43px
-$button-padding = 0 15px
-$button-size = 17px
-$button-color = white
-$button-border = $blue
-$button-background = $blue
+$button-radius = 30px
+$button-height = 50px
+$button-padding = 0 20px
+$button-size = 14px
+$button-color = $dark
+$button-border = $dark
+$button-background = transparent
 $button-hover-color = white
-$button-border-hover-color = $button-hover
-$button-background-hover-color = $button-hover
+$button-border-hover-color = $blue
+$button-background-hover-color = $blue
 // Button xl
 $button-xl-width = auto
 $button-xl-height = 200px
@@ -128,7 +128,8 @@ $placeholderFont = $body-font
 // Colors
 dark          =  #262626
 yellow        =  #f5aa00
-blue          =  #2763b0
+blue          =  #2997ee
+soft-blue     =  #e2ebf5
 grey          =  #d7d7d7
 soft          =  #f7fafc
 orange        =  #f17300
@@ -141,7 +142,7 @@ milk          =  #e5e1d0
 gold          =  #d09700
 border        =  #d5d5d5
 border-grey   =  #484848
-button-hover  =  #194174
+button-hover  =  #2c6ea3
 dash-border   =  #ececec
 // //
 grey2         =  #878787
@@ -594,6 +595,10 @@ for i in (1..100)
     position: relative
 .col_margin
   margin-right $col-margin
+.col_margin-20
+  margin-right 20px
+.col_margin-40
+  margin-right 40px
 
 
 // Alignment

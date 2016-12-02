@@ -1,5 +1,54 @@
 $(document).ready(function() {
   
+  // Paralax
+  var $layerParallax = $('.section__top__intro');
+    if ( ! Modernizr.touch ) {
+      if ( $layerParallax.length > 0 ) {
+      $layerParallax.parallax();
+    }
+  }
+
+
+  var wHeight = $(window).height();
+  
+  function parallax() {
+    var pHeight = $(this).outerHeight();
+    var pMiddle = pHeight / 2;
+    var wMiddle = wHeight / 2;
+    var fromTop = $(this).offset().top;
+    var scrolled = $(window).scrollTop();
+    var speed = $(this).attr('data-parallax-speed');
+    var rangeA = (fromTop - wHeight);
+    var rangeB = (fromTop + pHeight);
+    var rangeC = (fromTop - wHeight);
+    var rangeD = (pMiddle + fromTop) - (wMiddle + (wMiddle / 2));
+    
+    if (rangeA < 0) {
+      rangeA = 0;
+      rangeB = wHeight
+    }
+
+    var percent = (scrolled - rangeA) / (rangeB - rangeA);
+    percent = percent * 100;
+    percent = percent * speed;
+    percent = percent.toFixed(2);
+    
+    var animFromBottom = (scrolled - rangeC) / (rangeD - rangeC);
+    animFromBottom = animFromBottom.toFixed(2);
+    
+    if (animFromBottom >= 1) {
+      animFromBottom = 1;
+    }
+
+    $(this).css('background-position', 'center ' + percent + '%');
+    $(this).find('.parallax-content').css('opacity', animFromBottom);
+    $(this).find('.parallax-content').css('transform', 'scale(' + animFromBottom + ')');
+  }
+  $('.parallax').each(parallax);
+  $(window).scroll(function(e) {
+    $('.parallax').each(parallax);
+  });
+  
   // Active tabs
   function swtch(tab, tabActive, tabContent, parentDiv){
     var tab = $(tab),
@@ -13,28 +62,6 @@ $(document).ready(function() {
   };
   swtch('.jsTab', 'active', '.jsCont', '.jsParent')
 
-  // // popup
-  // var popup = $('.popup')
-  // var close = $('.popup__close')
-  // $('.js__popup').click(function(event) {
-  //   popup.addClass('jsVisible');
-  // });
-  // close.click(function(event) {
-  //   popup.removeClass('jsVisible');
-  //   $(this).closest('.jsVisible').removeClass('jsVisible');
-  // });
-
-  function popup (popup, closePopup, popupVisible) {
-    var popup = popup;
-    var close = closePopup;
-    var popupActive = popupVisible;
-    close.click(function(){
-      popup.removeClass(popupVisible);
-      $(this).closest(popupVisible).removeClass(popupVisible)
-    });
-  }
-  popup('popup','popup__close','jsVisible');
-
 
   // Navgoco acordion
   var acordion = $('.jsNavgoco')
@@ -46,22 +73,13 @@ $(document).ready(function() {
 
 
   // Bx slider
-  var slider = $().bxSlider({
-    pager: false,
-    controls: false,
-    auto: true,
-    speed: 1000,
-    pause: 7000,
-    mode: 'fade'
-  });
-
-
-  var slider2 = $().bxSlider({
+  var slider1 = $('jsBxSlider-0').bxSlider({
     pager: true,
     controls: false,
     auto: true,
     speed: 1000,
     pause: 5000,
+    mode: 'fade',
     pagerCustom: '.bx__pager',
     responsive: true,
     // nextSelector: '.s-next',
@@ -85,17 +103,60 @@ $(document).ready(function() {
 
 
   // Slick slider
-  $().slick({
-  infinite: true,
-  dots: false,
-  arrows: false,
-  autoplay: false,
-  slidesToShow: 15,
-  slidesToScroll: 9,
-    // You can unslick at a given breakpoint now by adding:
-    // settings: "unslick"
-    // instead of a settings object
+  $('.jsSlick-0').slick({
+    infinite: true,
+    dots: true,
+    arrows: true,
+    autoplay: false,
+    slidesToShow: 1,
+    slidesToScroll: 1
   });
+
+
+  // Slick slider
+  $('.jsSlick-1').slick({
+    infinite: true,
+    dots: false,
+    arrows: true,
+    autoplay: false,
+    slidesToShow: 11,
+    // slidesToScroll: 11,
+    draggable: false,
+    lazyLoad: 'ondemand',
+    focusOnSelect: true,
+    centerMode: true,
+    variableWidth: true,
+    nextArrow: '.jsSlickNext',
+    prevArrow: '.jsSlickPrev',
+    responsive: [
+      {
+        breakpoint: 1250,
+        settings: {
+          slidesToShow: 7,
+          slidesToScroll: 3
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }]
+  });
+
+
+  // Reenit slick
+  // $().click(function(event) {
+  //   $().slick("setPosition");
+  // });
 
 
   // Scroll to top
@@ -109,7 +170,7 @@ $(document).ready(function() {
 
   // Height detect funciton
   function heightDetect(){
-    $().css( 
+    $('.section__top').css( 
       'height', $(window).height()
     );
   };
@@ -141,16 +202,30 @@ $(document).ready(function() {
 
 
   // Custom scroll
-  var scrolVar = $()
   (function($){
     $(window).load(function(){
-      scrollVar.mCustomScrollbar({
+      $('.custom-scroll').mCustomScrollbar({
+        scrollInertia:100,
+        contentTouchScroll: true,
+        autoExpandScrollbar: true
+        // axis:"x"
+      });
+    });
+  })(jQuery);
+
+
+  // Destroy custom scroll
+  function menuScroll() {
+    if ($(window).width() <= 1024) {
+        $('.custom-scroll').mCustomScrollbar("destroy").addClass('overflow');
+      } else {
+      $(".custom-scroll").mCustomScrollbar({
         scrollInertia:100,
         contentTouchScroll: true,
         autoExpandScrollbar: true
       });
-    });
-  })(jQuery);
+    }
+  }
 
 
   // Auto height column function
@@ -194,5 +269,42 @@ $(document).ready(function() {
     equalheight();
   });
 
-});
 
+  // Anchor function
+  $(function() {
+    $(".jsAnchor").click(function() {
+      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+          $('html,body').animate({
+            scrollTop: target.offset().top
+          }, 1000);
+          return false;
+        }
+      }
+    });
+  });
+
+
+  // Lightbox
+  // var lightbox = $('.jsLightBox').simpleLightbox({
+  //   captions: false,
+  //   showCounter: false,
+  //   nav: false
+  // });
+
+
+  // Lang selector
+  $('.jsLangSelector').click(function(){
+    $(this).toggleClass('active');
+    $('.jsLangContent').toggleClass('jsVisible');
+  });
+  $(document).mouseup(function (e) {
+    var container = $(".jsLangSelector");
+    if (container.has(e.target).length === 0){
+        container.removeClass('active');
+    }
+  });
+
+});
